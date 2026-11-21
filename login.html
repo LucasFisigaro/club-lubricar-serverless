@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceso Personal - Club Lubricar</title>
+    <link rel="stylesheet" href="/src/styles/styles.css">
+</head>
+<body>
+
+    <!-- BARRA DE NAVEGACIÓN GLOBAL -->
+    <nav class="navbar-marca">
+        <div class="nav-izquierda" onclick="window.location.href='/login.html'">
+            <div class="nav-logo-wrapper">
+                <img src="/static/images/logo_lubricar_white.png" alt="Logo Club Lubricar" class="nav-logo-png">
+            </div>
+            <span class="nav-titulo"></span>
+        </div>
+        <div class="nav-derecha">
+            <span class="nav-usuario-email">🔒 Acceso Exclusivo Personal</span>
+        </div>
+    </nav>
+
+    <!-- MARCO / CONTENEDOR GENERAL -->
+    <div class="marco-aplicacion">
+        <div class="marco-header-titulo">
+            <span>Club Lubricar - Sistema de Puntos</span>
+            <span class="marco-sesion-info">Autenticación de Empleados</span>
+        </div>
+
+        <main class="contenedor-principal">
+            <div class="caja">
+                <div class="login-logo-box">
+                    <img src="/static/images/logo_lubricar_white.png" alt="Club Lubricar" class="login-logo-img">
+                </div>
+
+                <h2>Iniciar Sesión</h2>
+                <p class="login-subtitulo">Ingresá con tu cuenta de personal autorizado</p>
+
+                <div id="alerta-config" class="alerta-config">
+                    ⚠️ <strong>Configuración pendiente:</strong> Definí <code>VITE_SUPABASE_URL</code> y <code>VITE_SUPABASE_ANON_KEY</code> en tu archivo <code>.env</code> o en Cloudflare Pages.
+                </div>
+
+                <form id="form-login">
+                    <input
+                        type="email"
+                        id="email-login"
+                        placeholder="Correo electrónico (ej. empleado@lubricar.com)"
+                        autocomplete="email"
+                        required
+                    >
+                    <input
+                        type="password"
+                        id="password-login"
+                        placeholder="Contraseña"
+                        autocomplete="current-password"
+                        required
+                    >
+                    <button type="submit" id="btn-submit-login" class="btn-indigo">
+                        Ingresar al Panel
+                    </button>
+                </form>
+
+                <div id="mensaje-login"></div>
+
+                <div class="login-footer-nota">
+                    El registro público está deshabilitado. Las cuentas de personal se gestionan desde el panel de administración de Supabase Auth.
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script type="module" src="/src/pages/login.ts"></script>
+</body>
+</html>

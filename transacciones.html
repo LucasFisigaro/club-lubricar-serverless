@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cargar / Canjear Puntos - Club Lubricar</title>
+    <link rel="stylesheet" href="/src/styles/styles.css">
+</head>
+<body class="auth-checking">
+
+    <!-- BARRA DE NAVEGACIÓN GLOBAL -->
+    <nav class="navbar-marca">
+        <div class="nav-izquierda" onclick="window.location.href='/'">
+            <div class="nav-logo-wrapper">
+                <span class="logo-icon"></span>
+                <img src="/static/images/logo_lubricar_white.png" alt="Logo Club Lubricar" class="nav-logo-png">
+            </div>
+            <span class="nav-titulo"></span>
+        </div>
+
+        <div class="nav-derecha">
+            <a href="/" class="nav-link">🏠 Inicio</a>
+            <a href="/nuevo_cliente.html" class="nav-link">👤 Nuevo Cliente</a>
+            <a href="/transacciones.html" class="nav-link activo">⭐ Transacciones</a>
+            <a href="/consulta_saldo.html" class="nav-link">🔍 Consultar Saldo</a>
+            <a href="/listado.html" class="nav-link">📋 Listado</a>
+            <span class="nav-separador"></span>
+            <span id="nav-user-email" class="nav-usuario-email" title="Usuario autenticado">...</span>
+            <button type="button" id="btn-logout" class="btn-logout">🚪 Salir</button>
+        </div>
+    </nav>
+
+    <!-- MARCO / CONTENEDOR GENERAL PARA LAS VISTAS -->
+    <div class="marco-aplicacion">
+        <div class="marco-header-titulo">
+            <span>Club Lubricar - Sistema de Puntos</span>
+            <span id="marco-user-info" class="marco-sesion-info">Sesión activa</span>
+        </div>
+
+        <main class="contenedor-principal">
+            <div class="caja">
+                <!-- Botón para volver al menú principal -->
+                <button type="button" id="btn-volver" class="btn-volver">
+                    ⬅ Volver al Menú
+                </button>
+
+                <h2>Cargar / Canjear</h2>
+                <form id="form-puntos">
+                    <input type="number" id="dni" placeholder="DNI del Cliente" min="1" step="1" autocomplete="off" required>
+
+                    <!-- Vista previa en vivo del cliente y saldo actual -->
+                    <div id="preview-cliente" class="preview-cliente"></div>
+
+                    <input type="number" id="monto" placeholder="Cantidad de Puntos" min="1" step="1" required>
+                    <select id="tipo">
+                        <option value="suma">Sumar puntos</option>
+                        <option value="resta">Canjear (Restar)</option>
+                    </select>
+                    <input type="text" id="motivo" placeholder="Motivo (ej. Cambio de aceite / Canje)" maxlength="200" required>
+
+                    <button type="submit" id="btn-procesar-tx" class="btn-indigo">Procesar Transacción</button>
+                </form>
+
+                <p id="mensaje"></p>
+            </div>
+        </main>
+    </div>
+
+    <script type="module" src="/src/pages/transacciones.ts"></script>
+</body>
+</html>

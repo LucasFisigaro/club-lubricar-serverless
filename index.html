@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Club Lubricar - Panel de Control</title>
+    <link rel="stylesheet" href="/src/styles/styles.css">
+</head>
+<body class="auth-checking">
+
+    <!-- BARRA DE NAVEGACIÓN GLOBAL -->
+    <nav class="navbar-marca">
+        <div class="nav-izquierda" onclick="window.location.href='/'">
+            <div class="nav-logo-wrapper">
+                <span class="logo-icon"></span>
+                <img src="/static/images/logo_lubricar_white.png" alt="Logo Club Lubricar" class="nav-logo-png">
+            </div>
+            <span class="nav-titulo"></span>
+        </div>
+
+        <div class="nav-derecha">
+            <a href="/" class="nav-link activo">🏠 Inicio</a>
+            <a href="/nuevo_cliente.html" class="nav-link">👤 Nuevo Cliente</a>
+            <a href="/transacciones.html" class="nav-link">⭐ Transacciones</a>
+            <a href="/consulta_saldo.html" class="nav-link">🔍 Consultar Saldo</a>
+            <a href="/listado.html" class="nav-link">📋 Listado</a>
+            <span class="nav-separador"></span>
+            <span id="nav-user-email" class="nav-usuario-email" title="Usuario autenticado">...</span>
+            <button type="button" id="btn-logout" class="btn-logout">🚪 Salir</button>
+        </div>
+    </nav>
+
+    <!-- MARCO / CONTENEDOR GENERAL PARA LAS VISTAS -->
+    <div class="marco-aplicacion">
+        <div class="marco-header-titulo">
+            <span>Club Lubricar - Sistema de Puntos</span>
+            <span id="marco-user-info" class="marco-sesion-info">Sesión activa</span>
+        </div>
+
+        <!-- CONTENIDO DINÁMICO DE LA VISTA -->
+        <main class="contenedor-principal">
+            <div class="caja-dashboard">
+                <h1 class="titulo-principal">Panel de Control</h1>
+                <p class="subtitulo-principal">Seleccioná una operación para comenzar</p>
+
+                <div class="grid-menu">
+
+                    <!-- Tarjeta 1: Nuevo Cliente -->
+                    <div class="tarjeta-menu" id="card-nuevo-cliente">
+                        <div class="icono-menu">
+                            <img src="/static/images/agregar_icon.png" alt="Registrar Cliente" class="img-icono-menu">
+                        </div>
+                        <p class="titulo-menu">Registrar Cliente</p>
+                    </div>
+
+                    <!-- Tarjeta 2: Cargar/Canjear Puntos -->
+                    <div class="tarjeta-menu" id="card-transacciones">
+                        <div class="icono-menu">
+                            <img src="/static/images/canjear_icon.png" alt="Cargar/Canjear Puntos" class="img-icono-menu">
+                        </div>
+                        <p class="titulo-menu">Cargar / Canjear</p>
+                    </div>
+
+                    <!-- Tarjeta 3: Consultar Saldo -->
+                    <div class="tarjeta-menu" id="card-consulta">
+                        <div class="icono-menu">
+                            <img src="/static/images/buscar_icon.png" alt="Consultar Saldo" class="img-icono-menu">
+                        </div>
+                        <p class="titulo-menu">Consultar Saldo</p>
+                    </div>
+
+                    <!-- Tarjeta 4: Listado de Clientes -->
+                    <div class="tarjeta-menu" id="card-listado">
+                        <div class="icono-menu">
+                            <img src="/static/images/listado_icon.png" alt="Listado de Clientes" class="img-icono-menu">
+                        </div>
+                        <p class="titulo-menu">Listado de Clientes</p>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script type="module" src="/src/pages/index.ts"></script>
+</body>
+</html>

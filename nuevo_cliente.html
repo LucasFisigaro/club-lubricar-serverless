@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevo Cliente - Club Lubricar</title>
+    <link rel="stylesheet" href="/src/styles/styles.css">
+</head>
+<body class="auth-checking">
+
+    <!-- BARRA DE NAVEGACIÓN GLOBAL -->
+    <nav class="navbar-marca">
+        <div class="nav-izquierda" onclick="window.location.href='/'">
+            <div class="nav-logo-wrapper">
+                <span class="logo-icon"></span>
+                <img src="/static/images/logo_lubricar_white.png" alt="Logo Club Lubricar" class="nav-logo-png">
+            </div>
+            <span class="nav-titulo"></span>
+        </div>
+
+        <div class="nav-derecha">
+            <a href="/" class="nav-link">🏠 Inicio</a>
+            <a href="/nuevo_cliente.html" class="nav-link activo">👤 Nuevo Cliente</a>
+            <a href="/transacciones.html" class="nav-link">⭐ Transacciones</a>
+            <a href="/consulta_saldo.html" class="nav-link">🔍 Consultar Saldo</a>
+            <a href="/listado.html" class="nav-link">📋 Listado</a>
+            <span class="nav-separador"></span>
+            <span id="nav-user-email" class="nav-usuario-email" title="Usuario autenticado">...</span>
+            <button type="button" id="btn-logout" class="btn-logout">🚪 Salir</button>
+        </div>
+    </nav>
+
+    <!-- MARCO / CONTENEDOR GENERAL PARA LAS VISTAS -->
+    <div class="marco-aplicacion">
+        <div class="marco-header-titulo">
+            <span>Club Lubricar - Sistema de Puntos</span>
+            <span id="marco-user-info" class="marco-sesion-info">Sesión activa</span>
+        </div>
+
+        <main class="contenedor-principal">
+            <div class="caja">
+                <!-- Botón para volver al menú principal -->
+                <button type="button" id="btn-volver" class="btn-volver">
+                    ⬅ Volver al Menú
+                </button>
+
+                <h2>Registrar Cliente</h2>
+                <form id="form-cliente">
+                    <input type="number" id="dni-cliente" placeholder="DNI (solo números)" min="1" step="1" required>
+                    <input type="text" id="nombre-cliente" placeholder="Nombre Completo" maxlength="120" required>
+                    <input type="text" id="telefono-cliente" placeholder="Teléfono" maxlength="50" required>
+
+                    <button type="submit" id="btn-guardar-cliente" class="btn-indigo">Guardar Cliente</button>
+                </form>
+
+                <div id="mensaje-cliente"></div>
+            </div>
+        </main>
+    </div>
+
+    <script type="module" src="/src/pages/nuevo_cliente.ts"></script>
+</body>
+</html>
